@@ -30,6 +30,11 @@ int S = 9;
 // deque (usually pronounced like "deck") is an irregular acronym of double-ended queue. Double-ended queues are sequence containers
 //with dynamic sizes that can be expanded or contracted on both ends (either its front or its back).
 // do your homework
+
+
+// si inca ceva boost-ul de eficienta de la deque la array e questionable at best, maybe in scenarios with huge data sets and most importantly server hardware cu ecc ram 
+// to take care of it
+
 int makeSum(const vector<int>& v){
   int s=0;
   for(int i=0;i<v.size();i++)
