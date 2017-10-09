@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int n=100,sol[101],counter=1;
+int n,sol[101],counter=1;
 
-int monezi[]={1,5,10,20,100};
+int monezi[]={5,10,20,25};
 
 void print(int v[],int k){
   for(int i=k;i>=0;i--){
@@ -20,6 +20,14 @@ int sum(int v[],int k){
   return total;
 }
 
+int Min[100],mk=10000000;
+
+void update(int v[],int k){
+  for(int i=0;i<=k;i++){
+    Min[i]=v[i];
+  }
+}
+
 void bkt(int sol[],int k){
   for(int i=4;i>=0;i--){
     sol[k]=monezi[i];
@@ -28,6 +36,10 @@ void bkt(int sol[],int k){
     }else{
       if(sol[k]<=sol[k-1] && k<=n){
         if(sum(sol,k)==n){
+          if(k<mk){
+            update(sol,k);
+            mk=k;
+          }
           cout<<"sol found ";
           counter++;
           print(sol,k);
@@ -41,6 +53,8 @@ void bkt(int sol[],int k){
 }
 
 int main(){
+  cin>>n;
   bkt(sol,0);
+  cout<<"optimum sol ";print(Min,mk);
   cout<<counter;
 }
