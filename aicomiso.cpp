@@ -5,7 +5,6 @@
 //meh
 
 using namespace std;
-
 int n;
 bool mat[100][100];
 
@@ -51,4 +50,5 @@ int main(){
   deque <int> path;
   path.push_back(1);
   route(path,1);
+
 }

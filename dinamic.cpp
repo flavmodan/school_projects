@@ -19,6 +19,7 @@ int main(){
   //   }
   // }
 
+
   lengths[n-1]=1;
   for(int i=n-2;i>=0;i--){
     for(int j=i+1;j<n;j++){
