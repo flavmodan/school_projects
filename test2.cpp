@@ -28,27 +28,25 @@ int n,m;
 deque<string> words;
 void bkt(deque<string> sol){
   for(int i=0;i<words.size();i++){
-    if(!appears(sol,words[i])){
+    if(sol.size()==0){
+      sol.push_back(words[i]);
+      bkt(sol);
+      sol.pop_back();
+    }else if(!appears(sol,words[i])&&checkFazan(sol[sol.size()-1],words[i])){
       sol.push_back(words[i]);
       // for(int k=0;k<sol.size();k++){
       //   cout<<sol[k]<<" ";
       // }
       // cout<<endl;
-      if(sol.size()<=1){
+      if(sol.size()==m){
+        cout<<"sol found :";
+        for(int k=0;k<sol.size();k++){
+          cout<<sol[k]<<" ";
+        }
+        cout<<endl;
+      }else{
         bkt(sol);
         sol.pop_back();
-      }else{
-        if(checkFazan(sol[sol.size()-2],sol[sol.size()-1])){
-          cout<<"sol : ";
-            for(int k=0;k<sol.size();k++){
-              cout<<sol[k]<<" ";
-            }
-            cout<<endl;
-          }else{
-            bkt(sol);
-            sol.pop_back();
-          }
-
       }
     }
   }
@@ -64,5 +62,5 @@ int main(){
     }
     deque<string> sol;
     bkt(sol);
-    //cout<<checkFazan("paul","ultim");
+    //cout<<checkFazan("alina","nas");
   }
