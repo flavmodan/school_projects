@@ -2,7 +2,18 @@
 #include <fstream>
 #include <deque>
 
-//meh
+/**
+     *
+    ***
+    ***
+    ***
+    ***
+    ***
+ ***   ***  
+*   * *   * 
+ ***   ***  
+
+*/
 
 using namespace std;
 int n;
